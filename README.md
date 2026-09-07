@@ -8,6 +8,9 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 [![Canvas API](https://img.shields.io/badge/Canvas_API-Particles_&_FX-FF6F00?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/API/Canvas_API)
 [![Design](https://img.shields.io/badge/UI/UX-Glassmorphism_&_3D_HUD-6C5CE7?style=for-the-badge)](https://fonts.google.com/)
+[![Sitio Web En Vivo](https://img.shields.io/badge/Demo%20Online-GitHub%20Pages-success?style=for-the-badge&logo=github&logoColor=white)](https://suescun2025.github.io/destinos-turisticos/)
+
+> 🚀 **Sitio Web Publicado y Accesible Online**: [https://suescun2025.github.io/destinos-turisticos/](https://suescun2025.github.io/destinos-turisticos/)
 
 ---
 
