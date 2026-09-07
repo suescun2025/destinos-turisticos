@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estados Unidos - Principales Destinos de Nueva York | Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estados_unidos.css">
+</head>
+<body>
+    <!-- Fondo Panorámico de la Estatua de la Libertad en Liberty Island -->
+    <div class="usa-hero-bg" id="usaBg"></div>
+
+    <!-- Velo cinemático de resplandor solar -->
+    <div class="skyline-glow-veil" id="skylineVeil"></div>
+
+    <!-- Gradiente inferior para máxima legibilidad -->
+    <div class="usa-overlay-gradient"></div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="usa-header">
+        <a href="index.html" class="back-btn" id="backBtn" aria-label="Volver a la vista principal de destinos">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>ESTADOS UNIDOS · AMÉRICA</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="usa-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ DESTINO EMBLEMÁTICO MUNDIAL</div>
+            <h1 class="usa-title">Estados Unidos</h1>
+            <p class="usa-subtitle">Los 5 Grandes Destinos Turísticos & la Majestad de Nueva York</p>
+
+            <!-- Selector Interactivo de los 5 Destinos -->
+            <div class="destinations-nav" role="tablist">
+                <button class="dest-tab active" data-dest="libertad" id="tabLibertad">
+                    <span class="dest-tab-num">01</span>
+                    <span class="dest-tab-name">Estatua de la Libertad</span>
+                </button>
+                <button class="dest-tab" data-dest="times" id="tabTimes">
+                    <span class="dest-tab-num">02</span>
+                    <span class="dest-tab-name">Times Square</span>
+                </button>
+                <button class="dest-tab" data-dest="central" id="tabCentral">
+                    <span class="dest-tab-num">03</span>
+                    <span class="dest-tab-name">Central Park</span>
+                </button>
+                <button class="dest-tab" data-dest="brooklyn" id="tabBrooklyn">
+                    <span class="dest-tab-num">04</span>
+                    <span class="dest-tab-name">Puente de Brooklyn</span>
+                </button>
+                <button class="dest-tab" data-dest="empire" id="tabEmpire">
+                    <span class="dest-tab-num">05</span>
+                    <span class="dest-tab-name">Empire State</span>
+                </button>
+            </div>
+
+            <!-- CONTENIDO DESTINO 1: ESTATUA DE LA LIBERTAD -->
+            <div class="dest-panel active" id="dest-libertad">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">93 m</span>
+                        <span class="stat-label">Altura con Pedestal</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1886</span>
+                        <span class="stat-label">Año Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">354</span>
+                        <span class="stat-label">Escalones a Corona</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">4.5M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Estatua de la Libertad?</h3>
+                        <p>
+                            Nombrada oficialmente <em>La Libertad iluminando el mundo</em>, es una monumental escultura de cobre sobre un pedestal de piedra en Liberty Island, en la desembocadura del río Hudson. Diseñada por el escultor francés Frédéric Auguste Bartholdi y con estructura interna del ingeniero Gustave Eiffel, fue un regalo de Francia al pueblo estadounidense para conmemorar el centenario de su independencia.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            El faro histórico que dio la bienvenida a millones de inmigrantes en el puerto de Nueva York. Navegar en ferry por la bahía y ascender a su corona ofrece una panorámica majestuosa de la silueta de rascacielos de Manhattan y las aguas del Atlántico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 2: TIMES SQUARE -->
+            <div class="dest-panel" id="dest-times">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">50M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">41</span>
+                        <span class="stat-label">Teatros Broadway</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">100+</span>
+                        <span class="stat-label">Pantallas LED Gigantes</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Energía Ininterrumpida</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es Times Square?</h3>
+                        <p>
+                            Conocida como "La Encrucijada del Mundo" y "El Centro del Universo", es la mítica intersección de Broadway y la Séptima Avenida en Midtown Manhattan. Destaca por sus colosales vallas publicitarias digitales que iluminan la noche con la intensidad de pleno día y por albergar el legendario Distrito Teatral de Broadway.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Un torbellino electrizante de luz, sonido y entretenimiento. Subir las famosas escaleras rojas de cristal en Father Duffy Square permite contemplar el espectáculo urbano más cinematográfico y fotografiado del planeta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 3: CENTRAL PARK -->
+            <div class="dest-panel" id="dest-central">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">341 ha</span>
+                        <span class="stat-label">Superficie Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1858</span>
+                        <span class="stat-label">Año de Creación</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">26.000</span>
+                        <span class="stat-label">Árboles Protegidos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">42M+</span>
+                        <span class="stat-label">Paseantes al Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es Central Park?</h3>
+                        <p>
+                            El parque urbano más famoso del mundo, una gigantesca obra maestra de paisajismo diseñada por Frederick Law Olmsted y Calvert Vaux en el corazón de Manhattan. Alberga lagos artificiales, puentes de hierro y piedra, el castillo Belvedere, praderas abiertas y pistas de patinaje.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Un remanso de naturaleza y serenidad en medio del ritmo vertiginoso de los rascacielos. Pasear en bote por The Lake, cruzar el romántico Bow Bridge o visitar el mosaico de <em>Imagine</em> en Strawberry Fields es una parada imprescindible en la Gran Manzana.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 4: PUENTE DE BROOKLYN -->
+            <div class="dest-panel" id="dest-brooklyn">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">1.825 m</span>
+                        <span class="stat-label">Longitud Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1883</span>
+                        <span class="stat-label">Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">84 m</span>
+                        <span class="stat-label">Torres Neogóticas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">East River</span>
+                        <span class="stat-label">Cruce Histórico</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Puente de Brooklyn?</h3>
+                        <p>
+                            El primer puente colgante suspendido mediante cables de acero del mundo, que une los distritos de Manhattan y Brooklyn sobre el río East. Diseñado por John Augustus Roebling y completado por Emily Warren Roebling, sus emblemáticos arcos dobles apuntados de piedra caliza y granito son un hito del siglo XIX.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Cruzar su pasarela elevada de madera al atardecer regala una de las postales más imponentes de Nueva York, con la silueta de los rascacielos del Bajo Manhattan y la Estatua de la Libertad recortándose contra el horizonte dorado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 5: EMPIRE STATE BUILDING -->
+            <div class="dest-panel" id="dest-empire">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">443 m</span>
+                        <span class="stat-label">Altura con Aguja</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">102</span>
+                        <span class="stat-label">Pisos Art Déco</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1931</span>
+                        <span class="stat-label">Año Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">360°</span>
+                        <span class="stat-label">Mirador Panorámico</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Empire State Building?</h3>
+                        <p>
+                            Erigido en tan solo 410 días durante la Gran Depresión en la Quinta Avenida con la Calle 34, este rascacielos estilo Art Déco fue el edificio más alto del mundo durante cuatro décadas. Su aguja iluminada cambia de tonalidad cada noche en honor a festividades mundiales y eventos históricos.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            El mirador al aire libre del piso 86 y el observatorio acristalado del piso 102 ofrecen una sensación de vértigo inigualable, permitiendo contemplar hasta seis estados en días despejados y el mar de luces resplandecientes de la metrópoli.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Navegación Final -->
+            <div class="action-row">
+                <a href="index.html" class="btn-primary">
+                    <span>Explorar Otros Destinos</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="estados_unidos.js"></script>
+</body>
+</html>

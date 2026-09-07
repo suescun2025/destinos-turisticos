@@ -1,0 +1,483 @@
+/* Estilos modernos y premium para la página de Estados Unidos y Nueva York */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-cyan: #00d4ff;
+    --primary-gold: #ffc837;
+    --accent-blue: #1d8cf8;
+    --bg-dark: #060912;
+    --glass-bg: rgba(10, 15, 30, 0.76);
+    --glass-border: rgba(0, 212, 255, 0.2);
+    --glass-glow: rgba(0, 212, 255, 0.25);
+    --text-main: #ffffff;
+    --text-muted: #d0d7e5;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fondo panorámico con la Estatua de la Libertad en Liberty Island */
+.usa-hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('estados_unidos_fondo.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    image-rendering: -webkit-optimize-contrast;
+    animation: libertySkylineEffect 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: filter, transform;
+}
+
+@keyframes libertySkylineEffect {
+    0% {
+        transform: translateY(4px);
+        filter: brightness(1.15) contrast(1.06) saturate(1.12);
+    }
+    100% {
+        transform: translateY(0);
+        filter: brightness(1.0) contrast(1.02) saturate(1.05);
+    }
+}
+
+/* Velo de resplandor solar y brisa marina */
+.skyline-glow-veil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 25%, rgba(0, 212, 255, 0.1) 0%, rgba(6, 9, 18, 0.55) 100%);
+    animation: veilFade 3.5s ease forwards;
+}
+
+@keyframes veilFade {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.82;
+    }
+}
+
+/* Canvas para partículas de destellos de luz */
+.usa-fx-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Gradiente inferior para máxima legibilidad */
+.usa-overlay-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(6, 9, 18, 0.92) 0%, rgba(6, 9, 18, 0.35) 45%, rgba(6, 9, 18, 0.2) 100%);
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Header superior con botón de retorno */
+.usa-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.4rem;
+    background: rgba(14, 22, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.back-btn .back-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.45);
+    transform: translateX(-4px);
+    color: #ffffff;
+}
+
+.back-btn:hover .back-icon {
+    transform: translateX(-3px);
+}
+
+.dest-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.12);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-cyan);
+}
+
+/* Contenido Principal */
+.usa-main {
+    position: relative;
+    z-index: 10;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.5rem 3rem 4.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: calc(100vh - 120px);
+}
+
+.hero-content {
+    max-width: 860px;
+    animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tag-destination {
+    display: inline-block;
+    color: var(--primary-gold);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 12px rgba(255, 200, 55, 0.5);
+}
+
+.usa-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 6.2rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 25%, #88e0ff 65%, #1d8cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.4rem;
+    filter: drop-shadow(0 4px 22px rgba(0, 0, 0, 0.6));
+}
+
+.usa-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #e2e8f0;
+    margin-bottom: 1.6rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+/* Selector Interactivo de los 5 Destinos (Tabs) */
+.destinations-nav {
+    display: flex;
+    gap: 0.55rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.dest-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 0.6rem 1.15rem;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dest-tab-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--primary-cyan);
+    opacity: 0.85;
+}
+
+.dest-tab:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.45);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.dest-tab.active {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.28) 0%, rgba(29, 140, 248, 0.28) 100%);
+    border-color: var(--primary-cyan);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(0, 212, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.dest-tab.active .dest-tab-num {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Paneles de Contenido */
+.dest-panel {
+    display: none;
+    animation: fadeInPanel 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dest-panel.active {
+    display: block;
+}
+
+@keyframes fadeInPanel {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cuadrícula de estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1.4rem;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 1rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-cyan);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25);
+}
+
+.stat-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #a5ebff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.35);
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Tarjeta de información principal */
+.info-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 18px;
+    padding: 1.6rem 2rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+}
+
+.section-block {
+    margin-bottom: 1.2rem;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #a5ebff;
+}
+
+.info-card p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+/* Caja de Reseña y Experiencia */
+.review-box {
+    background: rgba(0, 212, 255, 0.08);
+    border-left: 3px solid var(--primary-cyan);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+}
+
+.review-header {
+    margin-bottom: 0.4rem;
+}
+
+.review-tag {
+    color: var(--primary-cyan);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.review-box p {
+    color: #f1f6fd;
+    font-size: 0.91rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Fila de acción */
+.action-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: linear-gradient(135deg, #00d4ff 0%, #1d8cf8 100%);
+    color: #060912;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35);
+    border: none;
+}
+
+.btn-primary svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+.btn-primary:hover svg {
+    transform: translateX(4px);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .usa-header {
+        padding: 1.2rem 1.5rem;
+    }
+    .usa-main {
+        padding: 1rem 1.5rem 3rem 1.5rem;
+    }
+    .destinations-nav {
+        gap: 0.4rem;
+    }
+    .dest-tab {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .info-card {
+        padding: 1.3rem;
+    }
+    .usa-title {
+        font-size: 3.2rem;
+    }
+}

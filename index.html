@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Título Interactivo Superior Izquierdo: Destinos Turísticos en texto flotante de luz -->
+    <header class="hud-brand-header" id="hudBrandHeader">
+        <h1 class="hud-title-text" id="hudTitleText" aria-label="Destinos Turísticos">
+            <span class="word">
+                <span class="char" style="--i:0">D</span><span class="char" style="--i:1">e</span><span class="char" style="--i:2">s</span><span class="char" style="--i:3">t</span><span class="char" style="--i:4">i</span><span class="char" style="--i:5">n</span><span class="char" style="--i:6">o</span><span class="char" style="--i:7">s</span>
+            </span>
+            <span class="word-gap">&nbsp;</span>
+            <span class="word">
+                <span class="char" style="--i:8">T</span><span class="char" style="--i:9">u</span><span class="char" style="--i:10">r</span><span class="char" style="--i:11">í</span><span class="char" style="--i:12">s</span><span class="char" style="--i:13">t</span><span class="char" style="--i:14">i</span><span class="char" style="--i:15">c</span><span class="char" style="--i:16">o</span><span class="char" style="--i:17">s</span>
+            </span>
+        </h1>
+    </header>
+
+    <!-- Capa 1: Fondo de postales turísticas (Fondo Base) -->
+    <div class="bg-postales" id="bgPostales"></div>
+
+    <!-- Capa Inmersiva: Fondo de París / Torre Eiffel activado al pasar el cursor (Efecto de profundidad) -->
+    <div class="bg-eiffel-immersion" id="bgEiffel"></div>
+
+    <!-- Capa Inmersiva: Fondo de Egipto / Gran Esfinge y Pirámides activado al hacer clic en el sarcófago -->
+    <div class="bg-egypt-immersion" id="bgEgypt"></div>
+
+    <!-- Capa Inmersiva: Fondo de Nueva York / Times Square activado al pasar el cursor sobre la Estatua de la Libertad -->
+    <div class="bg-usa-immersion" id="bgUsa"></div>
+
+    <!-- Capa Inmersiva: Fondo de España / Madrid activado al pasar el cursor sobre el Edificio Metrópolis -->
+    <div class="bg-spain-immersion" id="bgSpain"></div>
+
+    <!-- Capa 2: Gráficos HUD tecnológicos del entorno (TOTALMENTE ESTÁTICO) -->
+    <div class="bg-hud-estatico"></div>
+
+    <!-- Capa 3: Contenedor 3D centrado que mueve sutilmente el círculo virtual y sus destellos -->
+    <div class="sphere-viewport">
+        <!-- Canvas para los destellos y líneas de luz láser que viajan hacia afuera -->
+        <canvas id="lightFlaresCanvas" class="light-flares-canvas"></canvas>
+
+        <div class="virtual-sphere" id="virtualSphere">
+            <!-- Imagen de la Torre Eiffel integrada orgánicamente con enlace interactivo a Francia -->
+            <a href="paris.html" class="monument-hologram" id="monumentEiffel" aria-label="Explorar destino Francia - Torre Eiffel y París">
+                <img src="torre_eiffel.png" alt="Torre Eiffel, Francia" class="monument-img">
+            </a>
+
+            <!-- Icono interactivo: Torre de Pisa (Efecto de inclinación y enlace a Italia) -->
+            <div class="monument-hologram monument-pisa" id="monumentPisa" aria-label="Explorar destino Italia - Torre de Pisa">
+                <img src="torre_pisa.png" alt="Torre de Pisa, Italia" class="monument-img">
+            </div>
+
+            <!-- Nuevo icono interactivo: Pirámides de Giza (Egipto) -->
+            <div class="monument-hologram monument-piramides" id="monumentPiramides" aria-label="Pirámides de Giza, Egipto">
+                <img src="piramides_giza.png" alt="Pirámides de Giza, Egipto" class="monument-img">
+            </div>
+
+            <!-- Nuevo icono interactivo: Estatua de la Libertad (Nueva York, Estados Unidos) -->
+            <div class="monument-hologram monument-libertad" id="monumentLibertad" aria-label="Estatua de la Libertad, Estados Unidos">
+                <img src="estatua_libertad.png" alt="Estatua de la Libertad, Nueva York" class="monument-img">
+            </div>
+
+            <!-- Icono interactivo: Sarcófago de Tutankamón sobre las Pirámides (Clic para cerrar/abrir) -->
+            <div class="monument-hologram monument-tutankamon" id="monumentTutankamon" aria-label="Sarcófago de Tutankamón, Egipto (Clic para cerrar/abrir)">
+                <div class="sarcophagus-wrapper" id="sarcophagusWrapper">
+                    <img src="sarcofago_caja.png" alt="Caja interior del sarcófago" class="sarcophagus-piece sarcophagus-case">
+                    <img src="sarcofago_tapa.png" alt="Tapa frontal del sarcófago" class="sarcophagus-piece sarcophagus-lid">
+                </div>
+            </div>
+
+            <!-- Icono interactivo: Edificio Metrópolis (Madrid, España) -->
+            <div class="monument-hologram monument-espana" id="monumentEspana" aria-label="Explorar destino España - Edificio Metrópolis, Madrid">
+                <img src="espana_metropolis.png" alt="Edificio Metrópolis, Madrid, España" class="monument-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal de la página -->
+    <main class="page-content">
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

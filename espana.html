@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>España - Principales Destinos Turísticos & Madrid | Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="espana.css">
+</head>
+<body>
+    <!-- Fondo Panorámico de Madrid / Edificio Metrópolis y Gran Vía -->
+    <div class="spain-hero-bg" id="spainBg"></div>
+
+    <!-- Velo cinemático de resplandor dorado crepuscular -->
+    <div class="spain-glow-veil" id="spainVeil"></div>
+
+    <!-- Canvas para partículas y destellos luminosos -->
+    <canvas id="spainFxCanvas" class="spain-fx-canvas"></canvas>
+
+    <!-- Gradiente inferior para máxima legibilidad -->
+    <div class="spain-overlay-gradient"></div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="spain-header">
+        <a href="index.html" class="back-btn" id="backBtn" aria-label="Volver a la vista principal de destinos">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>ESPAÑA · EUROPA</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="spain-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ DESTINO EMBLEMÁTICO EUROPEO</div>
+            <h1 class="spain-title">España</h1>
+            <p class="spain-subtitle">Los 5 Grandes Destinos Turísticos & la Elegancia de Madrid</p>
+
+            <!-- Selector Interactivo de los 5 Destinos -->
+            <div class="destinations-nav" role="tablist">
+                <button class="dest-tab active" data-dest="metropolis" id="tabMetropolis">
+                    <span class="dest-tab-num">01</span>
+                    <span class="dest-tab-name">Edificio Metrópolis</span>
+                </button>
+                <button class="dest-tab" data-dest="sagrada" id="tabSagrada">
+                    <span class="dest-tab-num">02</span>
+                    <span class="dest-tab-name">Sagrada Familia</span>
+                </button>
+                <button class="dest-tab" data-dest="alhambra" id="tabAlhambra">
+                    <span class="dest-tab-num">03</span>
+                    <span class="dest-tab-name">La Alhambra</span>
+                </button>
+                <button class="dest-tab" data-dest="sevilla" id="tabSevilla">
+                    <span class="dest-tab-num">04</span>
+                    <span class="dest-tab-name">Plaza de España</span>
+                </button>
+                <button class="dest-tab" data-dest="cordoba" id="tabCordoba">
+                    <span class="dest-tab-num">05</span>
+                    <span class="dest-tab-name">Mezquita de Córdoba</span>
+                </button>
+            </div>
+
+            <!-- CONTENIDO DESTINO 1: EDIFICIO METRÓPOLIS (MADRID) -->
+            <div class="dest-panel active" id="dest-metropolis">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">45 m</span>
+                        <span class="stat-label">Altura con Cúpula</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1911</span>
+                        <span class="stat-label">Año Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Victoria</span>
+                        <span class="stat-label">Estatua Alada Dorada</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Gran Vía</span>
+                        <span class="stat-label">Inicio / Alcalá</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Edificio Metrópolis?</h3>
+                        <p>
+                            El <strong>Edificio Metrópolis</strong> es una de las joyas arquitectónicas más fotografiadas y emblemáticas de Madrid. Diseñado por los arquitectos franceses Jules y Raymond Février e inaugurado en 1911, corona la confluencia entre la legendaria calle de Alcalá y la vibrante Gran Vía.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            Su majestuosa cúpula de pizarra negra con ornamentos dorados está coronada por una imponente estatua de bronce de la <em>Victoria Alada</em>, iluminando el cielo madrileño con un encanto cosmopolita inigualable.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p class="review-text">
+                            "Pasear al atardecer frente al Edificio Metrópolis cuando se encienden sus luces doradas sobre el cielo azul de Madrid es una experiencia conmovedora. Marca la entrada triunfal a la Gran Vía y encarna la elegancia clásica y el alma nocturna española."
+                        </p>
+                    </div>
+
+                    <div class="practical-info">
+                        <div class="info-item">
+                            <span class="item-label">📍 Ubicación</span>
+                            <span class="item-val">Calle de Alcalá, 39 / Inicio Gran Vía, Madrid</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">📸 Mejor momento</span>
+                            <span class="item-val">Atardecer y hora azul nocturna</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">🏛️ Estilo</span>
+                            <span class="item-val">Beaux-Arts francés y Neobarroco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 2: SAGRADA FAMILIA (BARCELONA) -->
+            <div class="dest-panel" id="dest-sagrada">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">172.5 m</span>
+                        <span class="stat-label">Altura Torre de Jesús</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1882</span>
+                        <span class="stat-label">Inicio Construcción</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">A. Gaudí</span>
+                        <span class="stat-label">Genio Modernista</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">4.7M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">La Basílica de la Sagrada Familia</h3>
+                        <p>
+                            Obra cumbre de Antoni Gaudí y máxima expresión del modernismo catalán. Declarada Patrimonio de la Humanidad por la UNESCO, combina formas orgánicas inspiradas en la naturaleza con vitrales hipercromáticos que tiñen el interior de luces celestiales.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p class="review-text">
+                            "Entrar al bosque de columnas de la Sagrada Familia mientras la luz de la tarde atraviesa las vidrieras es como adentrarse en una sinfonía de colores y espiritualidad que desafía toda arquitectura terrenal."
+                        </p>
+                    </div>
+
+                    <div class="practical-info">
+                        <div class="info-item">
+                            <span class="item-label">📍 Ubicación</span>
+                            <span class="item-val">Eixample, Barcelona, Cataluña</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="item-label">⭐ Declaración</span>
+                            <span class="item-val">Patrimonio de la Humanidad UNESCO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 3: LA ALHAMBRA (GRANADA) -->
+            <div class="dest-panel" id="dest-alhambra">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">1238</span>
+                        <span class="stat-label">Reino Nazarí</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">140.000 m²</span>
+                        <span class="stat-label">Superficie Complejo</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Generalife</span>
+                        <span class="stat-label">Jardines del Edén</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">2.7M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">La Alhambra y el Generalife</h3>
+                        <p>
+                            Ciudad palatina andalusí única en el mundo, compuesta por palacios, jardines y fortalezas sobre la colina de la Sabika con la majestuosa Sierra Nevada como telón de fondo. Destaca el Patio de los Leones y sus filigranas de yesería islámica.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p class="review-text">
+                            "El rumor del agua en las acequias, el aroma a arrayán y azahar, y la vista dorada de Granada desde la Torre de la Vela hacen de la Alhambra un ensueño poético eterno."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 4: PLAZA DE ESPAÑA (SEVILLA) -->
+            <div class="dest-panel" id="dest-sevilla">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">50.000 m²</span>
+                        <span class="stat-label">Área Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1929</span>
+                        <span class="stat-label">Expo Iberoamericana</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">48</span>
+                        <span class="stat-label">Bancos de Provincias</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">515 m</span>
+                        <span class="stat-label">Canal Navegable</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">Plaza de España de Sevilla</h3>
+                        <p>
+                            Diseñada por Aníbal González para la Exposición Iberoamericana de 1929 en el Parque de María Luisa. Su monumental forma semicircular abraza el río y simboliza el abrazo de España a sus antiguas provincias americanas mediante azulejos trianeros y puentes de ensueño.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 5: MEZQUITA-CATEDRAL DE CÓRDOBA -->
+            <div class="dest-panel" id="dest-cordoba">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">785 d.C.</span>
+                        <span class="stat-label">Fundación Califal</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">856</span>
+                        <span class="stat-label">Columnas de Jaspe y Granito</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Patrimonio</span>
+                        <span class="stat-label">UNESCO 1984</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">2M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">Mezquita-Catedral de Córdoba</h3>
+                        <p>
+                            Monumento universal que resume siglos de convivencia cultural y artística. Famosa por su hipnótico bosque de arcos dobles bicolores (rojo y blanco) y su exquisito Mihrab labrado en oro bizantino.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="espana.js"></script>
+</body>
+</html>

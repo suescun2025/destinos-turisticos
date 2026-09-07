@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egipto - Pirámides de Giza y Tutankamón | Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="egipto.css">
+</head>
+<body>
+    <!-- Fondo Panorámico de la Gran Esfinge y Pirámides de Giza con efecto cinematográfico -->
+    <div class="egypt-hero-bg" id="egyptBg"></div>
+
+    <!-- Velo solar y atmósfera dorada del desierto -->
+    <div class="desert-glow-veil" id="desertVeil"></div>
+
+    <!-- Canvas para partículas de polvo dorado y rayos solares sagrados -->
+    <canvas id="egyptFxCanvas" class="egypt-fx-canvas"></canvas>
+
+    <!-- Gradiente inferior para máxima legibilidad y contraste -->
+    <div class="egypt-overlay-gradient"></div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="egypt-header">
+        <a href="index.html" class="back-btn" id="backBtn" aria-label="Volver a la vista principal de destinos">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>EGIPTO · ÁFRICA</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="egypt-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ TIERRA DE FARAONES Y MISTERIOS MILENARIOS</div>
+            <h1 class="egypt-title">Egipto</h1>
+            <p class="egypt-subtitle">La Cuna de la Civilización & el Legado Eterno de Giza</p>
+
+            <!-- Cuadrícula de estadísticas históricas -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">4.500+</span>
+                    <span class="stat-label">Años de Historia</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">138+</span>
+                    <span class="stat-label">Pirámides Halladas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">1.323 a.C.</span>
+                    <span class="stat-label">Época Tutankamón</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">6.650 km</span>
+                    <span class="stat-label">Longitud del Nilo</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta de información principal con pestañas temáticas -->
+            <div class="info-card">
+                <div class="card-nav">
+                    <button class="tab-btn active" data-tab="tab-giza" id="tabGiza">Giza y Esfinge</button>
+                    <button class="tab-btn" data-tab="tab-tutankamon" id="tabTut">Tutankamón</button>
+                    <button class="tab-btn" data-tab="tab-misterios" id="tabMisterios">Astronomía & Nilo</button>
+                </div>
+
+                <!-- Pestaña 1: Giza -->
+                <div class="tab-content active" id="tab-giza">
+                    <h3>La Necrópolis de Giza y la Gran Esfinge</h3>
+                    <p>
+                        Ubicada en la meseta de Giza, a las afueras de El Cairo, se alza la única de las Siete Maravillas del Mundo Antiguo que aún perdura: la Gran Pirámide de Keops, junto a las de Kefrén y Micerino. Custodiadas por la colosal Gran Esfinge tallada en roca caliza, estas maravillas arquitectónicas fueron erigidas hace más de 4.500 años con una precisión matemática asombrosa.
+                    </p>
+                </div>
+
+                <!-- Pestaña 2: Tutankamón -->
+                <div class="tab-content" id="tab-tutankamon">
+                    <h3>El Enigma del Faraón Dorado</h3>
+                    <p>
+                        Descubierta intacta en 1922 por Howard Carter en el Valle de los Reyes, la tumba de Tutankamón (KV62) albergaba más de 5.000 tesoros invaluables. Su icónica máscara funeraria de oro macizo de 24 quilates, incrustada con lapislázuli, turquesas y cornalina, representa el culmen del arte sagrado y la inmortalidad en el Antiguo Egipto.
+                    </p>
+                </div>
+
+                <!-- Pestaña 3: Astronomía -->
+                <div class="tab-content" id="tab-misterios">
+                    <h3>Astronomía Sagrada y el Río Nilo</h3>
+                    <p>
+                        Los antiguos egipcios alinearon sus templos y pirámides con los puntos cardinales y las constelaciones celestes, especialmente con el cinturón de Orión y la estrella Sirio. El río Nilo, venerado como fuente de vida y renacimiento, dictaba el calendario agrícola mediante sus crecidas periódicas que fertilizaban el desierto.
+                    </p>
+                </div>
+
+                <!-- Fila de Acciones -->
+                <div class="action-row">
+                    <a href="index.html" class="btn-primary">
+                        <span>Explorar Otros Destinos</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+
+                    <button class="btn-secondary" id="curiosityBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                        <span>Dato Curioso</span>
+                    </button>
+                </div>
+
+                <!-- Mensaje emergente de curiosidad -->
+                <div class="curiosity-box" id="curiosityBox">
+                    <span class="curiosity-icon">✧</span>
+                    <p id="curiosityText">¿Sabías que los constructores de las pirámides no eran esclavos, sino respetados obreros y artesanos remunerados y alimentados con carne y cerveza, enterrados con honores cerca de los monumentos?</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="egipto.js"></script>
+</body>
+</html>

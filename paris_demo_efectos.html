@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestra: Transición Cinemática de Caída de la Noche | París</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="paris.css">
+    <style>
+        /* Contenedor del Fondo Fiel Original */
+        .paris-hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('paris_noche.jpg');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            
+            /* Animación de entrada de UNA SOLA VEZ al abrir la página */
+            animation: nightFallEffect 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: filter, transform;
+        }
+
+        /* Efecto 'Caída de la Noche': sutil movimiento de sombras/nubes y transición de luz crepuscular a noche */
+        @keyframes nightFallEffect {
+            0% {
+                /* Inicio: Luz crepuscular tenue, nubes ligeramente elevadas */
+                transform: translateY(-12px) scale(1.018);
+                filter: brightness(1.22) contrast(1.08) saturate(1.2);
+            }
+            100% {
+                /* Estado final: Noche asentada, imagen 100% estática, nítida y en su posición perfecta */
+                transform: translateY(0px) scale(1.0);
+                filter: brightness(1.0) contrast(1.0) saturate(1.0);
+            }
+        }
+
+        /* Capa de sombras y atmósfera nocturna de UNA SOLA VEZ */
+        .night-shadow-veil {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 30%, rgba(30, 10, 50, 0.0) 0%, rgba(10, 5, 20, 0.45) 100%);
+            animation: veilFade 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes veilFade {
+            0% {
+                opacity: 0.1;
+            }
+            100% {
+                opacity: 0.85;
+            }
+        }
+
+        /* Canvas para las estelas de luz del tráfico (UNA SOLA VEZ al abrir) */
+        .paris-fx-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Capa sutil de gradiente inferior para legibilidad */
+        .paris-overlay-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top, rgba(7, 6, 15, 0.75) 0%, rgba(7, 6, 15, 0.0) 45%, rgba(7, 6, 15, 0.25) 100%);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        /* Controles de la Muestra Interactiva */
+        .demo-controls {
+            position: fixed;
+            top: 1.5rem;
+            right: 2rem;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .demo-pill {
+            background: rgba(0, 229, 255, 0.15);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            color: #00e5ff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .replay-btn {
+            background: linear-gradient(135deg, #ffb800, #ff8800);
+            color: #000000;
+            border: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 184, 0, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .replay-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 184, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo original 100% íntegro con efecto cinemático de UNA SOLA VEZ -->
+    <div class="paris-hero-bg" id="parisBg"></div>
+
+    <!-- Capa de transición de sombras nocturnas -->
+    <div class="night-shadow-veil" id="nightVeil"></div>
+
+    <!-- Canvas para la ráfaga de estelas de luz del tráfico (UNA SOLA VEZ) -->
+    <canvas id="parisFxCanvas" class="paris-fx-canvas"></canvas>
+
+    <!-- Gradiente inferior sutil -->
+    <div class="paris-overlay-gradient"></div>
+
+    <!-- Controles de la Muestra Interactiva -->
+    <div class="demo-controls">
+        <span class="demo-pill">🌙 Efecto de una sola vez al abrir</span>
+        <button class="replay-btn" id="replayBtn" onclick="replayEntranceEffect()">↻ Ver efecto de entrada de nuevo</button>
+    </div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="paris-header">
+        <a href="index.html" class="back-btn" id="backBtn">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>FRANCIA · PARÍS DE NOCHE</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="paris-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ DESTINO EMBLEMÁTICO</div>
+            <h1 class="paris-title">París</h1>
+            <p class="paris-subtitle">La Ciudad de la Luz & la Majestuosa Torre Eiffel</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">330 m</span>
+                    <span class="stat-label">Altura Total</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">1889</span>
+                    <span class="stat-label">Año de Inauguración</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">20.000</span>
+                    <span class="stat-label">Luces Centelleantes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">7M+</span>
+                    <span class="stat-label">Visitantes al Año</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Transición Cinemática de Bienvenida</h3>
+                <p>
+                    Al abrir la página, las sombras y nubes del atardecer se asientan suavemente recreando la llegada de la noche mientras los faros blancos y luces rojas recorren la avenida en una sola pasada. Al finalizar, la imagen se mantiene completamente estática, nítida y en alta definición.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('parisFxCanvas');
+        const ctx = canvas.getContext('2d');
+        const parisBg = document.getElementById('parisBg');
+        const nightVeil = document.getElementById('nightVeil');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // ==========================================
+        // RÁFAGA DE ESTELAS DE LUZ (UNA SOLA VEZ)
+        // ==========================================
+        let trafficTrails = [];
+        let animationRunning = false;
+
+        function launchTraffic() {
+            trafficTrails = [];
+            const w = canvas.width;
+            const h = canvas.height;
+            const roadY = h * 0.86;
+
+            // Carril Izquierdo (Luces Blancas hacia la izquierda)
+            for (let i = 0; i < 22; i++) {
+                trafficTrails.push({
+                    x: (w * 0.44) - (i * 24) + (Math.random() * 15),
+                    y: roadY + (Math.random() * 30 - 8),
+                    length: 120 + Math.random() * 150,
+                    width: 2.2 + Math.random() * 2.2,
+                    speed: -(16 + Math.random() * 9),
+                    alpha: 1.0,
+                    decay: 0.016 + Math.random() * 0.006,
+                    glowColor: 'rgba(230, 250, 255, 0.95)',
+                    blurColor: '#00e5ff'
+                });
+            }
+
+            // Carril Derecho (Luces Rojas hacia la derecha)
+            for (let i = 0; i < 24; i++) {
+                trafficTrails.push({
+                    x: (w * 0.54) + (i * 24) + (Math.random() * 15),
+                    y: roadY + (Math.random() * 30 - 8),
+                    length: 130 + Math.random() * 170,
+                    width: 2.2 + Math.random() * 2.5,
+                    speed: 16 + Math.random() * 10,
+                    alpha: 1.0,
+                    decay: 0.015 + Math.random() * 0.006,
+                    glowColor: 'rgba(255, 50, 75, 0.95)',
+                    blurColor: '#ff2a55'
+                });
+            }
+
+            if (!animationRunning) {
+                animationRunning = true;
+                requestAnimationFrame(renderLoop);
+            }
+        }
+
+        function renderLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let anyAlive = false;
+
+            trafficTrails.forEach(t => {
+                t.x += t.speed;
+                t.alpha -= t.decay;
+
+                if (t.alpha > 0) {
+                    anyAlive = true;
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, t.alpha);
+
+                    const xEnd = t.x + (t.speed > 0 ? -t.length : t.length);
+
+                    const grad = ctx.createLinearGradient(t.x, t.y, xEnd, t.y);
+                    grad.addColorStop(0, t.glowColor);
+                    grad.addColorStop(0.3, t.glowColor);
+                    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                    ctx.strokeStyle = grad;
+                    ctx.lineWidth = t.width;
+                    ctx.lineCap = 'round';
+                    ctx.shadowColor = t.blurColor;
+                    ctx.shadowBlur = 10;
+
+                    ctx.beginPath();
+                    ctx.moveTo(t.x, t.y);
+                    ctx.lineTo(xEnd, t.y);
+                    ctx.stroke();
+
+                    ctx.restore();
+                }
+            });
+
+            if (anyAlive) {
+                requestAnimationFrame(renderLoop);
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                animationRunning = false;
+            }
+        }
+
+        // Función para reiniciar el efecto de entrada manualmente en la demo
+        function replayEntranceEffect() {
+            if (parisBg) {
+                parisBg.style.animation = 'none';
+                void parisBg.offsetWidth; // Reflow
+                parisBg.style.animation = 'nightFallEffect 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+            }
+            if (nightVeil) {
+                nightVeil.style.animation = 'none';
+                void nightVeil.offsetWidth; // Reflow
+                nightVeil.style.animation = 'veilFade 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+            }
+            launchTraffic();
+        }
+
+        // Iniciar automáticamente una sola vez al entrar
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(launchTraffic, 200);
+        });
+        setTimeout(launchTraffic, 200);
+    </script>
+</body>
+</html>

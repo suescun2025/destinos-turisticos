@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francia - Principales Destinos de París | Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="paris.css">
+</head>
+<body>
+    <!-- Fondo Panorámico Nocturno de la Torre Eiffel con animación de caída de la noche -->
+    <div class="paris-hero-bg" id="parisBg"></div>
+
+    <!-- Velo cinemático de sombras nocturnas -->
+    <div class="night-shadow-veil" id="nightVeil"></div>
+
+    <!-- Canvas para la ráfaga de estelas de luz del tráfico -->
+    <canvas id="parisFxCanvas" class="paris-fx-canvas"></canvas>
+
+    <!-- Gradiente inferior sutil para legibilidad -->
+    <div class="paris-overlay-gradient"></div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="paris-header">
+        <a href="index.html" class="back-btn" id="backBtn" aria-label="Volver a la vista principal de destinos">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>FRANCIA · EUROPA</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="paris-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ DESTINO EMBLEMÁTICO EUROPEO</div>
+            <h1 class="paris-title">Francia</h1>
+            <p class="paris-subtitle">Los 5 Grandes Destinos Turísticos de París</p>
+
+            <!-- Selector Interactivo de los 5 Destinos -->
+            <div class="destinations-nav" role="tablist">
+                <button class="dest-tab active" data-dest="eiffel" id="tabEiffel">
+                    <span class="dest-tab-num">01</span>
+                    <span class="dest-tab-name">Torre Eiffel</span>
+                </button>
+                <button class="dest-tab" data-dest="louvre" id="tabLouvre">
+                    <span class="dest-tab-num">02</span>
+                    <span class="dest-tab-name">Museo del Louvre</span>
+                </button>
+                <button class="dest-tab" data-dest="notredame" id="tabNotreDame">
+                    <span class="dest-tab-num">03</span>
+                    <span class="dest-tab-name">Notre-Dame</span>
+                </button>
+                <button class="dest-tab" data-dest="arc" id="tabArc">
+                    <span class="dest-tab-num">04</span>
+                    <span class="dest-tab-name">Arco del Triunfo</span>
+                </button>
+                <button class="dest-tab" data-dest="sacrecoeur" id="tabSacreCoeur">
+                    <span class="dest-tab-num">05</span>
+                    <span class="dest-tab-name">Sacré-Cœur</span>
+                </button>
+            </div>
+
+            <!-- CONTENIDO DESTINO 1: TORRE EIFFEL -->
+            <div class="dest-panel active" id="dest-eiffel">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">330 m</span>
+                        <span class="stat-label">Altura Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1889</span>
+                        <span class="stat-label">Año Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">20.000</span>
+                        <span class="stat-label">Luces Doradas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">7M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Torre Eiffel?</h3>
+                        <p>
+                            Diseñada por el ingeniero Gustave Eiffel para la Exposición Universal de 1889 con motivo del centenario de la Revolución Francesa, es una monumental torre de hierro forjado de 330 metros que se convirtió en el símbolo indiscutible de Francia y en el monumento de pago más visitado del mundo.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Subir a sus miradores regala la perspectiva más impresionante de la Ciudad de la Luz. Al caer la noche, su estructura se enciende cada hora con un deslumbrante centelleo de 20.000 bombillas que transforma el cielo parisino en pura magia visual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 2: MUSEO DEL LOUVRE -->
+            <div class="dest-panel" id="dest-louvre">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">35.000+</span>
+                        <span class="stat-label">Obras Expuestas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1793</span>
+                        <span class="stat-label">Año Apertura</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">73.000 m²</span>
+                        <span class="stat-label">Superficie Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">8.9M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Museo del Louvre?</h3>
+                        <p>
+                            Es el museo nacional de arte más grande y visitado del mundo, ubicado en el imponente Palacio del Louvre, antigua residencia de los reyes franceses. Su acceso principal está coronado por la icónica pirámide de cristal diseñada por el arquitecto I. M. Pei en 1989.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Un viaje incomparable por la historia de la humanidad, desde la civilización egipcia y griega hasta el Renacimiento. Custodia obras maestras universales como la <em>Mona Lisa</em> de Leonardo da Vinci, la <em>Victoria Alada de Samotracia</em> y la <em>Venus de Milo</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 3: CATEDRAL DE NOTRE-DAME -->
+            <div class="dest-panel" id="dest-notredame">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">1163</span>
+                        <span class="stat-label">Inicio Construcción</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">69 m</span>
+                        <span class="stat-label">Altura Torres</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Gótico</span>
+                        <span class="stat-label">Estilo Sagrado</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Île de la Cité</span>
+                        <span class="stat-label">Ubicación Histórica</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Catedral de Notre-Dame?</h3>
+                        <p>
+                            Obra cumbre de la arquitectura gótica medieval francesa, dedicada a la Virgen María. Se ubica en la histórica isla de la Cité, en el corazón del río Sena, y destaca por sus innovadores arbotantes exteriores, su aguja central y sus legendarias gárgolas vigilantes.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Famosa mundialmente por haber albergado coronaciones de reyes y emperadores (como Napoleón I) y por ser el escenario de la célebre novela de Victor Hugo <em>Nuestra Señora de París</em>. Sus monumentales rosetones de vitrales medievales filtran la luz creando una atmósfera espiritual sobrecogedora.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 4: ARCO DEL TRIUNFO -->
+            <div class="dest-panel" id="dest-arc">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">50 m</span>
+                        <span class="stat-label">Altura Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1806</span>
+                        <span class="stat-label">Orden Napoleón</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Avenidas Radiales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Campos Elíseos</span>
+                        <span class="stat-label">Eje Emblemático</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Arco del Triunfo?</h3>
+                        <p>
+                            Uno de los monumentos más representativos de la capital francesa, comisionado por Napoleón Bonaparte tras su victoria en la batalla de Austerlitz para honrar a los ejércitos franceses. Domina el extremo occidental de la célebre Avenida de los Campos Elíseos en la Place Charles de Gaulle.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Bajo su arco arde perpetuamente la Llama del Soldado Desconocido desde 1923. Subir a su terraza superior ofrece una de las vistas urbanas más espectaculares del planeta: la perfecta alineación geométrica de las doce grandes avenidas parisinas desplegándose en forma de estrella.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 5: SACRÉ-CŒUR -->
+            <div class="dest-panel" id="dest-sacrecoeur">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">130 m</span>
+                        <span class="stat-label">Altitud Colina</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1914</span>
+                        <span class="stat-label">Año Construcción</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Romano-Bizantino</span>
+                        <span class="stat-label">Estilo Artístico</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Montmartre</span>
+                        <span class="stat-label">Barrio Bohemio</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Basílica del Sacré-Cœur?</h3>
+                        <p>
+                            La Basílica del Sagrado Corazón es un majestuoso templo de travertino blanco ubicado en la cima de la colina de Montmartre, el punto más alto de París. Su piedra secreta desprende calcita al contacto con la lluvia, lo que le permite conservar su inmaculada blancura a través de los siglos.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            El epicentro del París más romántico y bohemio, donde vivieron leyendas como Picasso, Van Gogh y Monet. Sus escalinatas son el lugar preferido al atardecer para escuchar músicos callejeros y contemplar una panorámica infinita y dorada de toda la ciudad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Navegación Final -->
+            <div class="action-row">
+                <a href="index.html" class="btn-primary">
+                    <span>Explorar Otros Destinos</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="paris.js"></script>
+</body>
+</html>

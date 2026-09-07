@@ -1,0 +1,444 @@
+/* Estilos modernos y cinematográficos para la página de España & Edificio Metrópolis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-gold: #f5af19;
+    --primary-amber: #e65c00;
+    --primary-cyan: #00e5ff;
+    --accent-red: #d32f2f;
+    --bg-dark: #040814;
+    --glass-bg: rgba(8, 14, 28, 0.78);
+    --glass-border: rgba(245, 175, 25, 0.25);
+    --glass-glow: rgba(245, 175, 25, 0.28);
+    --text-main: #ffffff;
+    --text-muted: #d5e0f2;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fondo panorámico con el Edificio Metrópolis de Madrid */
+.spain-hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('espana_fondo.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    image-rendering: -webkit-optimize-contrast;
+    animation: metropolisZoomEffect 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: filter, transform;
+}
+
+@keyframes metropolisZoomEffect {
+    0% {
+        transform: scale(1.02);
+        filter: contrast(1.02) brightness(1.0);
+    }
+    100% {
+        transform: scale(1.0);
+        filter: contrast(1.02) brightness(1.0);
+    }
+}
+
+/* Velo sutil de resplandor dorado crepuscular */
+.spain-glow-veil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle at 45% 40%, rgba(245, 175, 25, 0.08) 0%, rgba(4, 8, 20, 0.35) 100%);
+    animation: veilFade 3.5s ease forwards;
+}
+
+@keyframes veilFade {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.35;
+    }
+}
+
+/* Canvas para partículas de destellos de luz */
+.spain-fx-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Gradiente inferior suave para máxima legibilidad y nitidez fotográfica */
+.spain-overlay-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(4, 8, 20, 0.88) 0%, rgba(4, 8, 20, 0.25) 55%, rgba(4, 8, 20, 0.05) 100%);
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Header superior con botón de retorno y badge */
+.spain-header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 36px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(12, 20, 38, 0.65);
+    border: 1px solid rgba(245, 175, 25, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.92rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.back-btn:hover {
+    background: rgba(245, 175, 25, 0.2);
+    border-color: var(--primary-gold);
+    transform: translateX(-4px);
+    box-shadow: 0 0 16px rgba(245, 175, 25, 0.4);
+}
+
+.back-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.dest-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(12, 20, 38, 0.65);
+    border: 1px solid rgba(245, 175, 25, 0.3);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffda79;
+    backdrop-filter: blur(12px);
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff4757;
+    box-shadow: 0 0 8px #ff4757;
+}
+
+/* Contenido Principal */
+.spain-main {
+    position: relative;
+    z-index: 20;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tag-destination {
+    display: inline-block;
+    color: #ffda79;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    background: rgba(245, 175, 25, 0.14);
+    border: 1px solid rgba(245, 175, 25, 0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+}
+
+.spain-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 40%, #ffda79 80%, #f5af19 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    filter: drop-shadow(0 4px 18px rgba(245, 175, 25, 0.35));
+}
+
+.spain-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 28px;
+    max-width: 680px;
+}
+
+/* Barra de navegación entre destinos */
+.destinations-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(10, 16, 32, 0.75);
+    border: 1px solid rgba(245, 175, 25, 0.25);
+    padding: 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(16px);
+    margin-bottom: 34px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dest-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dest-tab-num {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.dest-tab:hover {
+    color: #ffffff;
+    background: rgba(245, 175, 25, 0.15);
+}
+
+.dest-tab.active {
+    background: linear-gradient(135deg, rgba(245, 175, 25, 0.35) 0%, rgba(230, 92, 0, 0.4) 100%);
+    border: 1px solid var(--primary-gold);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(245, 175, 25, 0.4);
+}
+
+/* Paneles de Contenido */
+.dest-panel {
+    display: none;
+    width: 100%;
+    max-width: 960px;
+    animation: fadeInPanel 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dest-panel.active {
+    display: block;
+}
+
+@keyframes fadeInPanel {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grid de Estadísticas Rápidas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 18px 16px;
+    text-align: center;
+    backdrop-filter: blur(14px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 6px 20px rgba(245, 175, 25, 0.25);
+}
+
+.stat-value {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #ffda79;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Tarjeta Principal de Información */
+.info-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    padding: 32px;
+    text-align: left;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.section-block {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #e2eafc;
+}
+
+/* Caja de Reseña y Experiencia */
+.review-box {
+    background: rgba(245, 175, 25, 0.08);
+    border-left: 4px solid var(--primary-gold);
+    border-radius: 0 14px 14px 0;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+}
+
+.review-header {
+    margin-bottom: 8px;
+}
+
+.review-tag {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffda79;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.review-text {
+    font-style: italic;
+    color: #f1f5fc;
+    line-height: 1.65;
+    font-size: 0.98rem;
+}
+
+/* Datos Prácticos */
+.practical-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(245, 175, 25, 0.2);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ffda79;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.item-val {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .spain-header {
+        padding: 16px 20px;
+    }
+    
+    .destinations-nav {
+        border-radius: 20px;
+    }
+
+    .dest-tab {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .info-card {
+        padding: 22px 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

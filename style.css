@@ -1,0 +1,618 @@
+/* Archivo de estilos en blanco para tu proyecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #ffffff;
+    background-color: #030814;
+}
+
+/* =========================================================
+   HEADER SUPERIOR IZQUIERDO: TÍTULO DESTINOS TURÍSTICOS FLOTANTE
+   ========================================================= */
+.hud-brand-header {
+    position: fixed;
+    top: 30px;
+    left: 36px;
+    z-index: 60;
+    pointer-events: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    user-select: none;
+}
+
+.hud-title-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    line-height: 1.2;
+    background: transparent;
+}
+
+.hud-title-text .word {
+    display: inline-flex;
+}
+
+.hud-title-text .word-gap {
+    display: inline-block;
+    width: 9px;
+}
+
+/* Estado Inicial de cada Letra: Difuso sutil (2px), con color azul electricidad del círculo virtual */
+.hud-title-text .char {
+    display: inline-block;
+    color: #00d4ff;
+    filter: blur(2px);
+    opacity: 0.65;
+    transform: scale(0.97);
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease, text-shadow 0.4s ease, color 0.4s ease;
+    will-change: filter, transform, opacity, text-shadow;
+}
+
+/* Animación secuencial de encendido letra por letra al pasar el ratón */
+.hud-brand-header:hover .char,
+.hud-brand-header.ignited .char {
+    animation: electricCharIgnite 0.85s cubic-bezier(0.18, 0.89, 0.32, 1.2) forwards;
+    animation-delay: calc(var(--i) * 0.045s);
+}
+
+@keyframes electricCharIgnite {
+    0% {
+        filter: blur(2px);
+        opacity: 0.65;
+        transform: scale(0.97);
+        color: #00d4ff;
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+    35% {
+        /* Fogonazo brillante de rayo eléctrico y luz pura */
+        filter: blur(0px) brightness(3.0);
+        opacity: 1;
+        transform: scale(1.22) translateY(-2px);
+        color: #ffffff;
+        text-shadow: 0 0 18px #00f0ff, 0 0 35px #00e5ff, 0 0 60px #00aaff, 0 0 90px #0077ff;
+    }
+    70% {
+        filter: blur(0px) brightness(1.5);
+        opacity: 1;
+        transform: scale(1.05);
+        color: #67e8f9;
+        text-shadow: 0 0 16px #00f0ff, 0 0 30px #00c8ff, 0 0 50px rgba(0, 170, 255, 0.7);
+    }
+    100% {
+        /* Estado final 100% nítido, azul electricidad idéntico al círculo virtual */
+        filter: blur(0px) brightness(1.0);
+        opacity: 1;
+        transform: scale(1.0);
+        color: #00e5ff;
+        text-shadow: 0 0 10px #00f0ff, 0 0 20px #00c8ff, 0 0 35px rgba(0, 170, 255, 0.75), 0 0 50px rgba(0, 120, 255, 0.4);
+    }
+}
+
+/* Fondo 1: Postales turísticas en HD (Fondo base) */
+.bg-postales {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('postales_hd.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1.0);
+    transition: opacity 1.3s ease, transform 1.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bg-postales.dimmed {
+    opacity: 0;
+    transform: scale(0.94);
+}
+
+/* Capa Inmersiva: Efecto de cámara cinematográfica desde debajo de la torre acercándose */
+.bg-eiffel-immersion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('paris_otono.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    
+    /* Estado inicial: Cámara viendo desde abajo (contrapicado) con zoom hacia la base */
+    transform: perspective(1200px) rotateX(15deg) translateY(50px) scale(1.22);
+    transform-origin: center 80%;
+    filter: blur(4px) brightness(0.85);
+    image-rendering: -webkit-optimize-contrast;
+    
+    /* Transición cinematográfica lenta, fluida y envolvente (~1.8s) */
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.9s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+}
+
+/* Estado activo: La cámara se acerca, nivela la perspectiva y encuadra la toma completa */
+.bg-eiffel-immersion.active {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0px) scale(1.0);
+    filter: blur(0px) saturate(1.12) contrast(1.06) brightness(1.02);
+}
+
+/* Capa Inmersiva: Fondo de Egipto (Gran Esfinge y Pirámide de Kefrén) activado al cerrar el sarcófago */
+.bg-egypt-immersion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('esfinge_giza_limpia.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    
+    /* Estado inicial: Sutil profundidad y desenfoque cinematográfico */
+    transform: perspective(1200px) scale(1.08);
+    transform-origin: center center;
+    filter: blur(4px) brightness(0.88);
+    image-rendering: -webkit-optimize-contrast;
+    
+    /* Transición cinematográfica fluida y envolvente */
+    transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+}
+
+/* Estado activo: Encuadre perfecto al 100% ajustado a la pantalla */
+.bg-egypt-immersion.active {
+    opacity: 1;
+    transform: perspective(1200px) scale(1.0);
+    filter: blur(0px) saturate(1.06) contrast(1.04) brightness(1.02);
+}
+
+/* Capa Inmersiva: Fondo de Nueva York (Times Square) activado al pasar el cursor sobre la Estatua de la Libertad */
+.bg-usa-immersion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('times_square_limpia.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    
+    /* Estado inicial: Sutil profundidad y desenfoque cinematográfico */
+    transform: perspective(1200px) scale(1.08);
+    transform-origin: center center;
+    filter: blur(4px) brightness(0.88);
+    image-rendering: -webkit-optimize-contrast;
+    
+    /* Transición cinematográfica fluida y envolvente */
+    transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+}
+
+/* Estado activo: Encuadre perfecto al 100% ajustado a la pantalla */
+.bg-usa-immersion.active {
+    opacity: 1;
+    transform: perspective(1200px) scale(1.0);
+    filter: blur(0px) saturate(1.08) contrast(1.04) brightness(1.02);
+}
+
+/* Capa Inmersiva: Fondo de España (Edificio Metrópolis, Gran Vía, Madrid) activado al pasar el cursor */
+.bg-spain-immersion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('espana_fondo.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    
+    /* Estado inicial: Sutil profundidad y desenfoque cinematográfico */
+    transform: perspective(1200px) scale(1.08);
+    transform-origin: center center;
+    filter: blur(4px) brightness(0.88);
+    image-rendering: -webkit-optimize-contrast;
+    
+    /* Transición cinematográfica fluida y envolvente */
+    transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+}
+
+/* Estado activo: Encuadre perfecto al 100% ajustado a la pantalla con máxima nitidez */
+.bg-spain-immersion.active {
+    opacity: 1;
+    transform: perspective(1200px) scale(1.0);
+    filter: blur(0px) saturate(1.04) contrast(1.02) brightness(1.0);
+}
+
+/* Efecto de viaje de cámara cinemático al hacer clic sobre la Estatua de la Libertad */
+.bg-usa-immersion.launching {
+    opacity: 1 !important;
+    animation: streetRushTravel 1.35s cubic-bezier(0.2, 0.9, 0.3, 1) forwards !important;
+    pointer-events: none;
+}
+
+@keyframes streetRushTravel {
+    0% {
+        transform: perspective(1000px) scale(1.0) translateY(0) rotateX(0deg);
+        filter: blur(0px) brightness(1.0) contrast(1.04);
+    }
+    30% {
+        /* La cámara acelera hacia el asfalto y se adentra en la avenida con nitidez total */
+        transform: perspective(700px) scale(1.28) translateY(25px) rotateX(6deg);
+        filter: blur(0px) brightness(1.04) contrast(1.06);
+    }
+    65% {
+        /* Máxima velocidad de viaje: las calles y carteles pasan rápidamente hacia atrás en alta definición */
+        transform: perspective(450px) scale(1.75) translateY(65px) rotateX(10deg);
+        filter: blur(0px) brightness(1.08) contrast(1.08);
+    }
+    100% {
+        /* Vuelo completo a través de la avenida con imagen 100% clara y nítida */
+        transform: perspective(300px) scale(2.3) translateY(120px) rotateX(14deg);
+        filter: blur(0px) brightness(1.12) contrast(1.1);
+        opacity: 1;
+    }
+}
+
+.monument-hologram.monument-libertad.launching {
+    animation: statueForwardFlight 1.35s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards !important;
+    pointer-events: none;
+    z-index: 100 !important;
+}
+
+@keyframes statueForwardFlight {
+    0% {
+        transform: translate(-50%, -50%) scale(1.0) translateY(0) translateZ(0);
+        filter: contrast(1.15) brightness(1.12) drop-shadow(0 0 16px rgba(0, 245, 255, 0.85));
+    }
+    35% {
+        /* La estatua avanza hacia adelante y se eleva en el aire hacia la cámara */
+        transform: translate(-50%, -50%) scale(1.5) translateY(-30px) translateZ(100px);
+        filter: contrast(1.25) brightness(1.35) drop-shadow(0 0 35px rgba(0, 212, 255, 1));
+    }
+    70% {
+        /* La estatua se acerca en primerísimo plano dominando el centro de la escena */
+        transform: translate(-50%, -50%) scale(2.35) translateY(-60px) translateZ(240px);
+        filter: contrast(1.35) brightness(1.6) drop-shadow(0 0 70px rgba(0, 212, 255, 1));
+    }
+    100% {
+        /* Destello y transición final */
+        transform: translate(-50%, -50%) scale(3.2) translateY(-90px) translateZ(400px);
+        filter: contrast(1.4) brightness(2.2) drop-shadow(0 0 120px rgba(0, 212, 255, 1));
+        opacity: 0.2;
+    }
+}
+
+/* Fondo 2: HUD tecnológico ambiental (100% estático, sutil y ligero) */
+.bg-hud-estatico {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('hud_estatico.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: screen; /* Solo luz pura sin ningún sombreado */
+    opacity: 0.85;
+}
+
+/* Contenedor del Círculo Virtual (centrado con perspectiva 3D) */
+.sphere-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+}
+
+/* Canvas de destellos y haces de luz interactivos */
+.light-flares-canvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* El Círculo Virtual 3D: Cuerpo interior 100% transparente con líneas de luz flotantes */
+.virtual-sphere {
+    width: 440px;
+    height: 440px;
+    background-image: url('circulo_virtual.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-style: preserve-3d;
+    will-change: transform;
+    mix-blend-mode: screen; /* Permite ver los monumentos directamente a través del cuerpo de la esfera */
+    filter: drop-shadow(0 0 10px rgba(0, 230, 255, 0.45));
+    position: relative;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Integración limpia, armónica y etérea del Monumento (Torre Eiffel) */
+.monument-hologram {
+    position: absolute;
+    top: calc(31% - 40px);
+    left: calc(50% - 20px);
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 126px;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    z-index: 30;
+    pointer-events: auto !important;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.3s ease;
+}
+
+/* Posición específica para el icono de la Torre de Pisa (desplazado 50px a la derecha y 30px hacia abajo) */
+.monument-hologram.monument-pisa {
+    top: calc(31% + 20px);
+    left: calc(50% + 100px);
+    width: 56px;
+    height: 112px;
+    transform-origin: 50% 88%;
+}
+
+/* Animación exclusiva de la Torre de Pisa: se endereza y regresa sola sin quitar el ratón */
+.monument-hologram.monument-pisa:hover,
+.monument-hologram.monument-pisa.animating {
+    animation: straightenAndReturn 1.5s cubic-bezier(0.25, 1, 0.4, 1);
+}
+
+@keyframes straightenAndReturn {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1.0);
+        filter: contrast(1.1) brightness(1.05);
+    }
+    38% {
+        /* Se endereza verticalmente hacia la derecha con brillo */
+        transform: translate(-50%, -50%) rotate(6.2deg) scale(1.14);
+        filter: contrast(1.18) brightness(1.15) drop-shadow(0 0 18px rgba(0, 245, 255, 0.9));
+    }
+    62% {
+        /* Mantiene brevemente la postura erguida */
+        transform: translate(-50%, -50%) rotate(6.2deg) scale(1.12);
+        filter: contrast(1.18) brightness(1.15) drop-shadow(0 0 14px rgba(0, 245, 255, 0.7));
+    }
+    100% {
+        /* Vuelve automáticamente a su inclinación original */
+        transform: translate(-50%, -50%) rotate(0deg) scale(1.0);
+        filter: contrast(1.1) brightness(1.05);
+    }
+}
+
+/* Posición específica para las Pirámides de Giza (desplazado 10px a la izquierda) */
+.monument-hologram.monument-piramides {
+    top: calc(50% + 45px);
+    left: calc(50% + 68px);
+    width: 110px;
+    height: 56px;
+    z-index: 30;
+}
+
+/* Posición específica para la Estatua de la Libertad (tamaño más grande) */
+.monument-hologram.monument-libertad {
+    top: calc(50% + 42px);
+    left: calc(50% - 34px);
+    width: 78px;
+    height: 156px;
+    z-index: 30;
+    transform-origin: 50% 88%;
+}
+
+/* Posición específica para el Edificio Metrópolis (Madrid, España) */
+.monument-hologram.monument-espana {
+    top: calc(31% + 22px);
+    left: calc(50% - 90px);
+    width: 62px;
+    height: 135px;
+    z-index: 30;
+    transform-origin: 50% 88%;
+}
+
+/* Icono del Sarcófago de Tutankamón: Oculto en reposo, emerge de atrás hacia adelante al posar el cursor sobre las pirámides */
+.monument-hologram.monument-tutankamon {
+    top: calc(50% + 47px);
+    left: calc(50% + 73px);
+    width: 35px;
+    height: 50px;
+    z-index: 35;
+    
+    /* Estado inicial: Invisible, en el fondo y pequeño */
+    opacity: 0;
+    transform: translate(-50%, -50%) translateZ(-40px) scale(0.1);
+    transform-origin: center center;
+    pointer-events: none;
+    
+    /* Transición fluida de profundidad (de atrás hacia adelante) */
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.34, 1.45, 0.64, 1);
+    will-change: transform, opacity;
+}
+
+.monument-hologram * {
+    pointer-events: none;
+}
+
+#monumentEiffel:hover,
+#monumentEiffel.hovered,
+.monument-hologram.monument-piramides:hover,
+.monument-hologram.monument-libertad:hover,
+.monument-hologram.monument-espana:hover,
+.monument-hologram.monument-espana.hovered {
+    transform: translate(-50%, -50%) scale(1.18);
+}
+
+/* Activación al pasar el cursor sobre las pirámides o sobre el sarcófago */
+.monument-hologram.monument-piramides:hover ~ .monument-tutankamon,
+.monument-hologram.monument-tutankamon:hover,
+.monument-hologram.monument-tutankamon.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateZ(10px) scale(1.0);
+    pointer-events: auto !important;
+}
+
+/* Hover directo sobre el sarcófago una vez visible */
+.monument-hologram.monument-tutankamon:hover {
+    transform: translate(-50%, -50%) translateZ(20px) scale(1.18);
+}
+
+.monument-hologram .monument-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: contrast(1.1) brightness(1.05);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#monumentEiffel:hover .monument-img,
+#monumentEiffel.hovered .monument-img,
+.monument-hologram.monument-piramides:hover .monument-img,
+.monument-hologram.monument-libertad:hover .monument-img,
+.monument-hologram.monument-espana:hover .monument-img,
+.monument-hologram.monument-espana.hovered .monument-img {
+    filter: contrast(1.15) brightness(1.12) drop-shadow(0 0 16px rgba(0, 245, 255, 0.85));
+}
+
+.monument-hologram.monument-tutankamon::after {
+    display: none;
+}
+
+/* Contenedor interno y piezas del sarcófago */
+.sarcophagus-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 400px;
+}
+
+.sarcophagus-piece {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: none !important;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Caja trasera abierta */
+.sarcophagus-case {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1), opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Tapa delantera móvil */
+.sarcophagus-lid {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.6s cubic-bezier(0.34, 1.25, 0.64, 1), left 0.6s cubic-bezier(0.34, 1.25, 0.64, 1);
+    z-index: 2;
+}
+
+/* Estado Cerrado al hacer clic: La tapa se posa perfectamente sobre la caja */
+.monument-hologram.monument-tutankamon.closed .sarcophagus-lid {
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.02) translateZ(6px);
+}
+
+.monument-hologram.monument-tutankamon.closed .sarcophagus-case {
+    right: 50%;
+    transform: translate(50%, -50%) scale(0.96);
+    opacity: 0.85;
+}
+
+/* Sutil halo y velo de energía del círculo virtual que abraza la imagen */
+.monument-hologram::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.22) 0%, rgba(0, 150, 255, 0.08) 50%, transparent 75%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 12;
+}
+
+/* Contenedor para el contenido de la web */
+.page-content {
+    position: relative;
+    z-index: 50;
+    min-height: 100vh;
+    pointer-events: none;
+}
+
+.page-content > * {
+    pointer-events: auto;
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italia - Principales Destinos Turísticos | Destinos Turísticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="italia.css">
+</head>
+<body>
+    <!-- Fondo Panorámico con la Pintoresca Calle Italiana con Flores y Arcos de Piedra -->
+    <div class="italia-hero-bg" id="italiaBg"></div>
+
+    <!-- Velo solar y atmósfera mediterránea cálida -->
+    <div class="mediterranean-glow-veil" id="mediterraneanVeil"></div>
+
+    <!-- Canvas para pétalos flotantes y rayos de sol dorados -->
+    <canvas id="italiaFxCanvas" class="italia-fx-canvas"></canvas>
+
+    <!-- Gradiente inferior sutil para máxima legibilidad -->
+    <div class="italia-overlay-gradient"></div>
+
+    <!-- Barra de Navegación Superior / Retorno -->
+    <header class="italia-header">
+        <a href="index.html" class="back-btn" id="backBtn" aria-label="Volver a la vista principal de destinos">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Volver a Destinos</span>
+        </a>
+
+        <div class="dest-badge">
+            <span class="badge-dot"></span>
+            <span>ITALIA · EUROPA</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="italia-main">
+        <section class="hero-content">
+            <div class="tag-destination">✦ DESTINO EMBLEMÁTICO MEDITERRÁNEO</div>
+            <h1 class="italia-title">Italia</h1>
+            <p class="italia-subtitle">Los 5 Grandes Destinos Turísticos & la Magia del Bel Paese</p>
+
+            <!-- Selector Interactivo de los 5 Destinos -->
+            <div class="destinations-nav" role="tablist">
+                <button class="dest-tab active" data-dest="pisa" id="tabPisa">
+                    <span class="dest-tab-num">01</span>
+                    <span class="dest-tab-name">Torre de Pisa</span>
+                </button>
+                <button class="dest-tab" data-dest="coliseo" id="tabColiseo">
+                    <span class="dest-tab-num">02</span>
+                    <span class="dest-tab-name">Coliseo Romano</span>
+                </button>
+                <button class="dest-tab" data-dest="venecia" id="tabVenecia">
+                    <span class="dest-tab-num">03</span>
+                    <span class="dest-tab-name">Canales de Venecia</span>
+                </button>
+                <button class="dest-tab" data-dest="florencia" id="tabFlorencia">
+                    <span class="dest-tab-num">04</span>
+                    <span class="dest-tab-name">Duomo de Florencia</span>
+                </button>
+                <button class="dest-tab" data-dest="amalfi" id="tabAmalfi">
+                    <span class="dest-tab-num">05</span>
+                    <span class="dest-tab-name">Costa Amalfitana</span>
+                </button>
+            </div>
+
+            <!-- CONTENIDO DESTINO 1: TORRE DE PISA -->
+            <div class="dest-panel active" id="dest-pisa">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">56,7 m</span>
+                        <span class="stat-label">Altura de la Torre</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1173</span>
+                        <span class="stat-label">Inicio Construcción</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">3,97°</span>
+                        <span class="stat-label">Ángulo Inclinación</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">294</span>
+                        <span class="stat-label">Peldaños en Espiral</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Torre de Pisa?</h3>
+                        <p>
+                            Es el campanario exento de la Catedral de Santa María Asunta en la <em>Piazza dei Miracoli</em> de Pisa (Toscana). Construida en mármol blanco, comenzó a inclinarse casi de inmediato tras su inicio en 1173 debido a unos cimientos débiles sobre un subsuelo inestable de arena y arcilla.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Considerada una de las joyas más extraordinarias del arte románico toscano y una proeza de estabilización ingenieril. Subir por su escalera de caracol inclinada produce una sensación de gravedad fascinante, recompensada con vistas inolvidables del baptisterio y los tejados toscanos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 2: COLISEO ROMANO -->
+            <div class="dest-panel" id="dest-coliseo">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">80 d.C.</span>
+                        <span class="stat-label">Inauguración</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">50.000+</span>
+                        <span class="stat-label">Capacidad Clásica</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">48 m</span>
+                        <span class="stat-label">Altura Fachada</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">7.6M+</span>
+                        <span class="stat-label">Visitantes / Año</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es el Coliseo Romano?</h3>
+                        <p>
+                            El Anfiteatro Flavio es el anfiteatro más grandioso construido durante el Imperio Romano. Levantado en el centro de Roma por orden del emperador Vespasiano, fue el epicentro de luchas de gladiadores, naumaquias (batallas navales simuladas) y espectáculos públicos durante más de cuatro siglos.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Declarado una de las Nuevas Siete Maravillas del Mundo Moderno y Patrimonio de la Humanidad por la UNESCO. Caminar por sus arquerías de piedra travertino y asomarse a los laberínticos pasajes subterráneos del <em>hipogeo</em> transporta al visitante directamente al esplendor de la Roma imperial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 3: CANALES DE VENECIA -->
+            <div class="dest-panel" id="dest-venecia">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">118</span>
+                        <span class="stat-label">Islas Conectadas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">400+</span>
+                        <span class="stat-label">Puentes de Piedra</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">3,8 km</span>
+                        <span class="stat-label">Gran Canal</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Siglo V</span>
+                        <span class="stat-label">Origen Fundación</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué son los Canales de Venecia?</h3>
+                        <p>
+                            Es el sistema de vías acuáticas urbanas más célebre del planeta, que sustituye a las calles tradicionales en la laguna de Venecia. El majestuoso Gran Canal, con su característica forma de 'S' invertida, está flanqueado por más de 170 suntuosos palacios renacentistas, góticos y barrocos construidos sobre pilotes de madera.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Navegar en góndola al compás del remo bajo el histórico Puente de Rialto y el Puente de los Suspiros ofrece una atmósfera de romance y misterio incomparable. Al atardecer, el reflejo dorado de las farolas sobre el agua convierte a Venecia en un lienzo viviente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 4: DUOMO DE FLORENCIA -->
+            <div class="dest-panel" id="dest-florencia">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">114 m</span>
+                        <span class="stat-label">Altura Cúpula</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1296</span>
+                        <span class="stat-label">Inicio Obra</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">45 m</span>
+                        <span class="stat-label">Diámetro Cúpula</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Toscana</span>
+                        <span class="stat-label">Cuna Renacimiento</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es Santa Maria del Fiore?</h3>
+                        <p>
+                            La Catedral de Florencia es la cumbre del arte renacentista italiano. Su monumental cúpula octogonal de ladrillo rojo, ideada por Filippo Brunelleschi sin emplear cimbras ni soportes de madera, representó la mayor hazaña técnica e ingenieril del siglo XV y sigue siendo la mayor cúpula de albañilería del mundo.
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            Su deslumbrante fachada de mármoles polícromos de Carrara (blanco), Prato (verde) y Siena (rosa) hipnotiza a cualquier espectador. Subir sus 463 escalones permite admirar de cerca los frescos del Juicio Final de Vasari y contemplar la mejor panorámica de la cuna del Renacimiento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DESTINO 5: COSTA AMALFITANA -->
+            <div class="dest-panel" id="dest-amalfi">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">50 km</span>
+                        <span class="stat-label">Tramo Costero</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">13</span>
+                        <span class="stat-label">Pueblos Mágicos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">UNESCO</span>
+                        <span class="stat-label">Patrimonio Mundial</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Tirreno</span>
+                        <span class="stat-label">Mar Cristalino</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="section-block">
+                        <h3 class="section-title">¿Qué es la Costa Amalfitana?</h3>
+                        <p>
+                            Ubicada en el golfo de Salerno (Campania), es una de las franjas litorales más espectaculares del Mediterráneo. Pueblos de ensueño como Positano, Amalfi y Ravello desafían la gravedad asentados en terrazas empinadas sobre acantilados escarpados, adornados con casas de colores pastel y huertos de limoneros gigantes (*sfusato amalfitano*).
+                        </p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span class="review-tag">✧ Reseña y Experiencia</span>
+                        </div>
+                        <p>
+                            El epítome de la <em>Dolce Vita</em> italiana: recorrer sus carreteras panorámicas entre aromas a brisa marina y flores silvestres, descender por callejuelas empedradas repletas de buganvilias y disfrutar de un auténtico limoncello artesanal con vistas al mar azul cobalto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Navegación Final -->
+            <div class="action-row">
+                <a href="index.html" class="btn-primary">
+                    <span>Explorar Otros Destinos</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="italia.js"></script>
+</body>
+</html>
