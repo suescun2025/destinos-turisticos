@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="espana.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="weather.css">
 </head>
 <body>
     <!-- Fondo Panorámico de Madrid / Edificio Metrópolis y Gran Vía -->
@@ -44,6 +45,68 @@
             <div class="tag-destination">✦ DESTINO EMBLEMÁTICO EUROPEO</div>
             <h1 class="spain-title">España</h1>
             <p class="spain-subtitle">Los 5 Grandes Destinos Turísticos & la Elegancia de Madrid</p>
+
+            <!-- Widget de Clima en Vivo con Open-Meteo API -->
+            <div class="weather-widget loading" data-lat="40.4168" data-lon="-3.7038" id="spainWeatherWidget">
+                <div class="weather-header">
+                    <div class="weather-location">
+                        <span class="weather-flag">🇪🇸</span>
+                        <span class="weather-city">Madrid & Destinos de España</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="weather-badge-live">
+                            <span class="live-dot"></span>
+                            <span>En Vivo</span>
+                        </span>
+                        <button type="button" class="weather-refresh-btn" aria-label="Actualizar clima">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="weather-main-row">
+                    <div class="weather-primary">
+                        <div class="weather-icon-wrap" aria-hidden="true">🌤️</div>
+                        <div class="weather-temp-wrap">
+                            <div class="weather-temp"><span class="weather-temp-value">--</span><span class="weather-temp-unit">°C</span></div>
+                            <span class="weather-condition">Consultando satélite...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-metrics-grid">
+                    <div class="weather-metric-item">
+                        <span class="metric-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                            Sensación
+                        </span>
+                        <span class="metric-value metric-feels-like">--°C</span>
+                    </div>
+                    <div class="weather-metric-item">
+                        <span class="metric-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                            Humedad
+                        </span>
+                        <span class="metric-value metric-humidity">--%</span>
+                    </div>
+                    <div class="weather-metric-item">
+                        <span class="metric-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+                            Viento
+                        </span>
+                        <span class="metric-value metric-wind">-- km/h</span>
+                    </div>
+                    <div class="weather-metric-item">
+                        <span class="metric-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>
+                            Lluvia
+                        </span>
+                        <span class="metric-value metric-precip">0.0 mm</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Selector Interactivo de los 5 Destinos -->
             <div class="destinations-nav" role="tablist">
@@ -464,5 +527,6 @@
 
     <script src="espana.js"></script>
     <script src="footer.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>

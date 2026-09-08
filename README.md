@@ -42,6 +42,7 @@ El portal permite navegar y profundizar en **5 grandes regiones mundiales**: **F
 ## ✨ Características Principales
 
 * 🌐 **Esfera Virtual Holográfica 3D**: Visor central interactivo con perspectiva dinámica, profundidad y destellos de luz.
+* ⛅ **Clima en Vivo con Open-Meteo API**: Widgets HUD con conexión satelital que consultan y muestran en tiempo real la temperatura, estado meteorológico, sensación térmica, humedad, viento y precipitaciones de cada capital (París, Roma, Madrid, Nueva York y El Cairo).
 * 🌌 **Fondos Inmersivos Reactivos (Hover & Click)**: El entorno cambia dinámicamente al pasar el cursor o interactuar sobre cada monumento en la vista principal (París nocturno, Gran Vía madrileña, Times Square, Gran Esfinge).
 * 💥 **Efectos Cinemáticos en Canvas**: Generación en tiempo real a 60 FPS de rayos láser expansivos, estelas lumínicas y partículas atmosféricas.
 * 🏺 **Mecánica Interactiva del Sarcófago**: Apertura y cierre animado de la tapa del sarcófago de Tutankamón con activación de la vista de Egipto.
