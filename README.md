@@ -204,3 +204,15 @@ git push -u origin main
 2. En **Build and deployment** > **Source**, selecciona **Deploy from a branch**.
 3. En **Branch**, selecciona `main` y la carpeta `/ (root)`.
 4. Haz clic en **Save**. En unos minutos tu web estará publicada en internet.
+
+---
+
+## 👨‍💻 Autor y Contacto Profesional
+
+* **Desarrollador:** **Yeferson Suescun**
+* **Rol:** *Full-Stack Web Developer*
+* **GitHub:** [@suescun2025](https://github.com/suescun2025)
+* **LinkedIn:** [Yeferson Suescun en LinkedIn](https://www.linkedin.com/in/suescun-suescun-salazar-ba9824304)
+* **Email de Contacto:** [suescunyeferson32@gmail.com](mailto:suescunyeferson32@gmail.com)
+* **Demo en Vivo:** [https://suescun2025.github.io/destinos-turisticos/](https://suescun2025.github.io/destinos-turisticos/)
+

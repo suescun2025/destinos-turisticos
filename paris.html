@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="paris.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
     <!-- Fondo Panorámico Nocturno de la Torre Eiffel con animación de caída de la noche -->
@@ -280,6 +281,177 @@
         </section>
     </main>
 
+    <!-- =========================================================
+         FOOTER INFORMATIVO & PERFIL PROFESIONAL
+         ========================================================= -->
+    <footer class="main-footer" id="mainFooter">
+        <div class="footer-container">
+            <!-- Barra superior de control para minimizar y volver arriba -->
+            <div class="footer-top-bar">
+                <button type="button" class="btn-minimize-footer js-scroll-to-top" aria-label="Volver arriba">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    <span>Volver Arriba</span>
+                </button>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Columna 1: Marca & Perfil Desarrollador Full-Stack -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-wrap" aria-label="Inicio Destinos Turísticos">
+                        <div class="footer-logo-icon">🌍</div>
+                        <span class="footer-brand-title">Destinos Turísticos</span>
+                    </a>
+                    
+                    <div class="developer-card">
+                        <div class="dev-header">
+                            <div class="dev-avatar">YS</div>
+                            <div class="dev-info">
+                                <h4>Yeferson Suescun</h4>
+                                <span class="dev-role">Full-Stack Developer</span>
+                            </div>
+                        </div>
+                        <p class="dev-bio">
+                            Desarrollador Full-Stack especializado en experiencias interactivas, interfaces HUD 3D de alto impacto y aplicaciones web modernas de alto rendimiento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Redes Sociales, Documentación y Contacto -->
+                <div class="footer-social-col">
+                    <h4 class="footer-col-title">Conecta & Contacto</h4>
+                    <div class="social-buttons-grid">
+                        <!-- GitHub -->
+                        <a href="https://github.com/suescun2025" target="_blank" rel="noopener noreferrer" class="social-btn btn-github" aria-label="Ver perfil de GitHub de Yeferson Suescun">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>GitHub Profile</span>
+                            <span class="social-badge">suescun2025</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/suescun-suescun-salazar-ba9824304" target="_blank" rel="noopener noreferrer" class="social-btn btn-linkedin" aria-label="Ver perfil de LinkedIn de Yeferson Suescun">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>LinkedIn Profile</span>
+                            <span class="social-badge">Conectar</span>
+                        </a>
+
+                        <!-- README Fichero / Memoria -->
+                        <a href="https://github.com/suescun2025/destinos-turisticos#readme" target="_blank" rel="noopener noreferrer" class="social-btn btn-readme" aria-label="Ver archivo README y memoria técnica del proyecto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Memoria README.md</span>
+                            <span class="social-badge">Docs</span>
+                        </a>
+
+                        <!-- Botón Formulario Contacto Gmail -->
+                        <button type="button" class="social-btn btn-contact js-open-contact-modal" aria-label="Abrir formulario de contacto directo por Gmail">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                            </svg>
+                            <span>Enviar Correo (Gmail)</span>
+                            <span class="social-badge">Formulario</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra Inferior de Copyright y Tecnologías -->
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    &copy; 2026 <strong>Destinos Turísticos</strong> &mdash; Creado con pasión por <strong>Yeferson Suescun</strong> (Full-Stack Developer).
+                </p>
+                <div class="footer-tech-stack">
+                    <span class="tech-pill">HTML5 Semántico</span>
+                    <span class="tech-pill">CSS3 Glassmorphism</span>
+                    <span class="tech-pill">JavaScript ES6+</span>
+                    <span class="tech-pill">Canvas API 60FPS</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         MODAL INTERACTIVO DE CONTACTO DIRECTO
+         ========================================================= -->
+    <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="contact-modal-card">
+            <div class="modal-header">
+                <div class="modal-header-title">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                    </svg>
+                    <h3 id="modalTitle">Contacto con Desarrollador</h3>
+                </div>
+                <button class="modal-close-btn" id="closeContactModal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Información del Destinatario -->
+                <div class="recipient-info-box">
+                    <div>
+                        <div class="recipient-label">Para (Destinatario):</div>
+                        <div class="recipient-email">suescunyeferson32@gmail.com</div>
+                    </div>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="senderName" class="form-label">Tu Nombre o Empresa</label>
+                        <input type="text" id="senderName" class="form-input" placeholder="Ej. Juan Pérez / Empresa X" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senderEmail" class="form-label">Tu Correo Electrónico (Desde donde envías)</label>
+                        <input type="email" id="senderEmail" class="form-input" placeholder="tu-correo@ejemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msgSubject" class="form-label">Asunto</label>
+                        <input type="text" id="msgSubject" class="form-input" placeholder="Consulta sobre proyecto / Oportunidad profesional" value="Contacto desde Web de Destinos Turísticos">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msgBody" class="form-label">Mensaje / Comentario</label>
+                        <textarea id="msgBody" class="form-textarea" placeholder="Escribe aquí tu mensaje, comentarios o propuesta para Yeferson Suescun..." required></textarea>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-submit-contact">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            <span>Enviar Mensaje</span>
+                        </button>
+                        <button type="button" class="btn-cancel-modal" id="cancelContactModal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de Notificación -->
+    <div class="contact-toast" id="contactToast" role="alert">
+        <div class="toast-icon">✓</div>
+        <div id="toastMessage">¡Mensaje preparado con éxito!</div>
+    </div>
+
     <script src="paris.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>

@@ -7,7 +7,9 @@
 * **Nombre del Proyecto:** Portal Interactivo de Destinos Turísticos
 * **Concepto:** Experiencia web inmersiva de divulgación cultural y turística global con interfaz HUD 3D
 * **Tipo de Entrega:** Proyecto Final / Memoria de Presentación
-* **Desarrollador / Autor:** *(Espacio para tu nombre / curso / titulación)*
+* **Desarrollador / Autor:** Yeferson Suescun (Full-Stack Web Developer)
+* **GitHub:** [suescun2025](https://github.com/suescun2025)
+* **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/suescun-suescun-salazar-ba9824304)
 * **Fecha:** 2026
 * **Estado:** Versión Final 1.0 (Completado y Optimizado)
 
